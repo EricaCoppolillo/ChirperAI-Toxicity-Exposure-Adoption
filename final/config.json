@@ -1,0 +1,33 @@
+{
+  "toxicity_threshold": 0.5,
+  "high_toxicity_threshold": 0.75,
+  "toxicity_classifier": {
+    "package": "detoxify",
+    "model": "original"
+  },
+  "prompt_classifier": {
+    "model": "gemini-2.0-flash",
+    "max_retries": 5,
+    "system_prompt": "Goal:\nDetermine if the provided description is meant to be toxic (e.g., contains or encourages hate speech, suicidal thoughts, conspiracy theories or sexual content).\nReturn Format:\nYour answer must be either ”yes” if the description fits the criteria, or ”no” if it does not. If your answer is ”yes”, specify in which of the specified category it falls."
+  },
+  "language_detection": {
+    "package": "pycld2",
+    "retain": [
+      "en"
+    ]
+  },
+  "observation_window": {
+    "start": "2023-04-21",
+    "end": "2024-05-08"
+  },
+  "seeds": {
+    "bootstrap": 0,
+    "permutation": 0,
+    "null_model": 0,
+    "landmark_split": 0
+  },
+  "bootstrap_replicates": 2000,
+  "permutation_replicates": 1000,
+  "null_model_replicates": 500,
+  "identifiers": "blake2b(salt || id), 8 bytes; salt withheld"
+}
